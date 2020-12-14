@@ -1,0 +1,35 @@
+.owner {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  height: auto;
+  vertical-align: center;
+  align-items: center;
+
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  margin: 20px 20px;
+  display: flex;
+  align-content: center;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  /* margin: 20px 20px; */
+  display: flex;
+  letter-spacing: 2px;
+  /* text-align: center; */
+  font-size: 16;
+}
+
+.attrBlue {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(93, 188, 210);
+  margin: auto 0px auto 20px;
+}

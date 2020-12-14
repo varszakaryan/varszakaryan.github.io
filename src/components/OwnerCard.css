@@ -1,0 +1,41 @@
+.ownerCard {
+  width: 375px;
+  height: 535px;
+  background-color: rgb(245, 236, 229);
+  position: absolute;
+  margin: 200px 350px;
+  box-shadow: -20px 20px 43px -20px #c5c5c5;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.ownerImg {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin: 30px 0 0 0;
+}
+/* 
+h1, p {
+  font-family: 'Poppins', sans-serif;
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  /* letter-spacing: 1px; */
+  /* text-align: center; */
+/* } */ */
+
+.textStyle {
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin: 40px auto;
+}
+
+.placeholderBlue {
+  height: 5px;
+  width: 50px;
+  background-color: rgb(93, 188, 210);
+  border-radius: 20%;
+}
