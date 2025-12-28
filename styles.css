@@ -434,6 +434,20 @@ body {
     font-size: 1.1rem;
 }
 
+.footer-link {
+    color: #120060;
+    text-decoration: underline;
+    text-decoration-color: rgba(18, 0, 96, 0.4);
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.footer-link:hover {
+    text-decoration-color: rgba(18, 0, 96, 1);
+    opacity: 0.8;
+}
+
 .contact {
     font-size: 0.95rem;
     opacity: 0.8;
