@@ -6,13 +6,14 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #09006E 0%, #7B41EE 100%);
+    background: linear-gradient(135deg, #120060 0%, #7B41EE 100%);
     min-height: 100vh;
     padding: 0;
     margin: 0;
@@ -79,7 +80,7 @@ body {
     background: rgba(255, 255, 255, 1.0);
     padding: 20px 25px;
     border-radius: 15px;
-    color: #09006E;
+    color: #120060;
     display: inline-block;
 }
 
@@ -136,6 +137,20 @@ body {
     font-size: 0.95rem;
     margin: 0;
     line-height: 1.4;
+}
+
+.agenda-link {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.agenda-link:hover {
+    text-decoration-color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .event-details {
@@ -206,6 +221,170 @@ body {
     text-decoration-color: rgba(255, 255, 255, 1);
 }
 
+.agenda-section {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 40px 40px;
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.agenda-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.agenda-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.agenda-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);
+    border-radius: 2px;
+}
+
+.agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: fadeInRight 0.6s ease-out both;
+}
+
+.agenda-item:nth-child(1) { animation-delay: 0.1s; }
+.agenda-item:nth-child(2) { animation-delay: 0.2s; }
+.agenda-item:nth-child(3) { animation-delay: 0.3s; }
+.agenda-item:nth-child(4) { animation-delay: 0.4s; }
+.agenda-item:nth-child(5) { animation-delay: 0.5s; }
+.agenda-item:nth-child(6) { animation-delay: 0.6s; }
+
+.agenda-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #7B41EE;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.agenda-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+}
+
+.agenda-time {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    min-width: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.agenda-description {
+    font-size: 1.3rem;
+    color: white;
+    flex: 1;
+    line-height: 1.5;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cocktails-section {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 60px 40px;
+    background: #120060;
+    border-radius: 20px;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.cocktails-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 10px rgba(123, 65, 238, 0.8),
+        0 0 20px rgba(123, 65, 238, 0.6),
+        0 0 30px rgba(123, 65, 238, 0.4),
+        0 0 40px rgba(123, 65, 238, 0.2);
+}
+
+.cocktails-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cocktail-item {
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.cocktail-item:nth-child(1) { animation-delay: 0.1s; }
+.cocktail-item:nth-child(2) { animation-delay: 0.2s; }
+.cocktail-item:nth-child(3) { animation-delay: 0.3s; }
+
+.cocktail-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.cocktail-ingredients {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 400;
+    line-height: 1.6;
+    text-transform: capitalize;
+}
+
 .profile-pic-wrapper {
     position: relative;
     flex-shrink: 0;
@@ -237,7 +416,7 @@ body {
 
 .footer {
     background: white;
-    color: #09006E;
+    color: #120060;
     padding: 20px;
     text-align: center;
     width: 100%;
@@ -277,6 +456,44 @@ body {
     }
 
     .detail-item {
+        font-size: 1.2rem;
+    }
+
+    .agenda-section {
+        padding: 0 30px 30px;
+        margin-top: 50px;
+    }
+
+    .agenda-title {
+        font-size: 2.5rem;
+        margin-bottom: 35px;
+    }
+
+    .agenda-time {
+        font-size: 1.3rem;
+        min-width: 70px;
+    }
+
+    .agenda-description {
+        font-size: 1.2rem;
+    }
+
+    .cocktails-section {
+        padding: 50px 30px;
+        margin-top: 50px;
+    }
+
+    .cocktails-title {
+        font-size: 3rem;
+        margin-bottom: 50px;
+        letter-spacing: 3px;
+    }
+
+    .cocktail-name {
+        font-size: 1.8rem;
+    }
+
+    .cocktail-ingredients {
         font-size: 1.2rem;
     }
 
@@ -360,6 +577,69 @@ body {
         font-size: 1.2rem;
     }
 
+    .agenda-section {
+        padding: 0 20px 30px;
+        margin-top: 40px;
+    }
+
+    .agenda-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .agenda-timeline {
+        padding-left: 30px;
+        gap: 20px;
+    }
+
+    .agenda-timeline::before {
+        left: 10px;
+    }
+
+    .agenda-item {
+        padding: 15px 20px;
+        gap: 20px;
+    }
+
+    .agenda-item::before {
+        left: -22px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .agenda-time {
+        font-size: 1.1rem;
+        min-width: 60px;
+    }
+
+    .agenda-description {
+        font-size: 1.1rem;
+    }
+
+    .cocktails-section {
+        padding: 40px 20px;
+        margin-top: 40px;
+        border-radius: 15px;
+    }
+
+    .cocktails-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+
+    .cocktails-list {
+        gap: 35px;
+    }
+
+    .cocktail-name {
+        font-size: 1.6rem;
+    }
+
+    .cocktail-ingredients {
+        font-size: 1.1rem;
+    }
+
     .footer p {
         font-size: 1rem;
     }
@@ -424,6 +704,71 @@ body {
 
     .agenda-notice .material-icons {
         font-size: 1.2rem;
+    }
+
+    .agenda-section {
+        padding: 0 15px 25px;
+        margin-top: 35px;
+    }
+
+    .agenda-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .agenda-timeline {
+        padding-left: 25px;
+        gap: 18px;
+    }
+
+    .agenda-timeline::before {
+        left: 8px;
+        width: 2px;
+    }
+
+    .agenda-item {
+        padding: 12px 18px;
+        gap: 15px;
+    }
+
+    .agenda-item::before {
+        left: -18px;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+
+    .agenda-time {
+        font-size: 1rem;
+        min-width: 55px;
+    }
+
+    .agenda-description {
+        font-size: 1rem;
+    }
+
+    .cocktails-section {
+        padding: 35px 15px;
+        margin-top: 35px;
+        border-radius: 12px;
+    }
+
+    .cocktails-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+        letter-spacing: 1.5px;
+    }
+
+    .cocktails-list {
+        gap: 30px;
+    }
+
+    .cocktail-name {
+        font-size: 1.4rem;
+    }
+
+    .cocktail-ingredients {
+        font-size: 1rem;
     }
 }
 
@@ -491,6 +836,75 @@ body {
         font-size: 1.1rem;
     }
 
+    .agenda-section {
+        padding: 0 10px 20px;
+        margin-top: 30px;
+    }
+
+    .agenda-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .agenda-timeline {
+        padding-left: 20px;
+        gap: 15px;
+    }
+
+    .agenda-timeline::before {
+        left: 6px;
+        width: 2px;
+    }
+
+    .agenda-item {
+        padding: 10px 15px;
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .agenda-item::before {
+        left: -14px;
+        width: 10px;
+        height: 10px;
+        border-width: 2px;
+    }
+
+    .agenda-time {
+        font-size: 0.95rem;
+        min-width: auto;
+        text-align: left;
+    }
+
+    .agenda-description {
+        font-size: 0.9rem;
+    }
+
+    .cocktails-section {
+        padding: 30px 10px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+
+    .cocktails-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    .cocktails-list {
+        gap: 25px;
+    }
+
+    .cocktail-name {
+        font-size: 1.2rem;
+    }
+
+    .cocktail-ingredients {
+        font-size: 0.9rem;
+    }
+}
+
     .footer {
         padding: 15px;
     }
@@ -522,6 +936,30 @@ body {
 
     .agenda-notice p {
         font-size: 0.8rem;
+    }
+
+    .agenda-title {
+        font-size: 1.3rem;
+    }
+
+    .agenda-time {
+        font-size: 0.9rem;
+    }
+
+    .agenda-description {
+        font-size: 0.85rem;
+    }
+
+    .cocktails-title {
+        font-size: 1.4rem;
+    }
+
+    .cocktail-name {
+        font-size: 1.1rem;
+    }
+
+    .cocktail-ingredients {
+        font-size: 0.85rem;
     }
 }
 
